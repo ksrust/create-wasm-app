@@ -9,6 +9,11 @@ module.exports = {
   },
   mode: "development",
   plugins: [
-    new CopyWebpackPlugin(['index.html'])
-  ],
+    new CopyWebpackPlugin(['index.html']),
+   // Have this example work in Edge which doesn't ship `TextEncoder` or `TextDecoder` at this time.
+ ],
+  experiments: {
+    asyncWebAssembly: true,
+    syncWebAssembly: true,
+  }
 };
